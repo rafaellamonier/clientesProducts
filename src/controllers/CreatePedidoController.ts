@@ -1,13 +1,15 @@
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 
 import { AppDataSource } from "../database/data-source";
 
 import { Pedido, PedidoStatus } from "../entities/Pedido.ts";
 import { Cliente } from "../entities/Cliente.ts";
+import { createPedidoSchema } from "../schemas/createPedidoSchema";
 
 export class CreatePedidoController {
-	async handle(req: Request, res: Response) {
-		const { descricao, total, cliente_id } = req.body;
+	async handle(req: Request, res: Response, next: NextFunction) {
+		try {
+		const { descricao, total, cliente_id } = createPedidoSchema.parse(req.body);
 
 		console.log("teste cliente_id", cliente_id);
 
@@ -38,5 +40,8 @@ export class CreatePedidoController {
 		await pedidoRepository.save(pedido);
 
 		return res.status(201).json(pedido);
+		} catch (error) {
+			next(error);
+		}
 	}
 }

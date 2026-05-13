@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { CreatePedidoController } from "../controllers/CreatePedidoController.ts";
+import { CreatePedidoController } from "../controllers/CreatePedidoController";
 import { UpdatePedidoController } from "../controllers/UpdatePedidoController";
 
 const pedidosRoutes = Router();
