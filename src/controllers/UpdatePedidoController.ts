@@ -1,7 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-
 import { UpdatePedidoService } from "../services/UpdatePedidoService";
-
 import { updatePedidoSchema } from "../schemas/updatePedidoSchema";
 
 export class UpdatePedidoController {

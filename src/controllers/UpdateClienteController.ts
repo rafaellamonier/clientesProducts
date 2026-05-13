@@ -1,7 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-
 import { UpdateClienteService } from "../services/UpdateClienteService.ts";
-
 import { updateClienteSchema } from "../schemas/updateClienteSchema.ts";
 
 export class UpdateClienteController {

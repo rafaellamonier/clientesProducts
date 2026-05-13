@@ -1,7 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-
 import { AppDataSource } from "../database/data-source";
-
 import { Pedido, PedidoStatus } from "../entities/Pedido.ts";
 import { Cliente } from "../entities/Cliente.ts";
 import { createPedidoSchema } from "../schemas/createPedidoSchema";
@@ -25,7 +23,7 @@ export class CreatePedidoController {
 		console.log("teste cliente", cliente);
 
 		if (!cliente) {
-			return res.satus(404).json({
+			return res.status(404).json({
 				message: "Cliente não encontrado",
 			});
 		}

@@ -6,7 +6,6 @@ import {
 	ManyToOne,
 	JoinColumn,
 } from "typeorm";
-
 import { Cliente } from "./Cliente";
 
 export enum PedidoStatus {

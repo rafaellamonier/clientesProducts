@@ -1,7 +1,5 @@
 import { Request, Response } from "express";
-
 import { AppDataSource } from "../database/data-source.ts";
-
 import { Cliente } from "../entities/Cliente";
 
 export class ListClientesController {

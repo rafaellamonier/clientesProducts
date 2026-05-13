@@ -1,5 +1,4 @@
 import { AppDataSource } from "../database/data-source";
-
 import { Cliente } from "../entities/Cliente";
 
 interface IRequest {
