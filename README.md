@@ -60,9 +60,22 @@ A API estará disponível em `http://localhost:3000`.
 |--------|---------------------------|----------------------------------------|
 | POST   | /pedidos                  | Cria um novo pedido                    |
 | GET    | /pedidos                  | Lista todos os pedidos                 |
+| GET    | /pedidos/search           | Busca pedidos com filtros              |
 | GET    | /pedidos/:id              | Busca um pedido pelo ID                |
 | PUT    | /pedidos/:id              | Atualiza os dados de um pedido         |
 | DELETE | /pedidos/:id              | Remove um pedido                       |
+
+### Filtros disponíveis em GET /pedidos/search
+
+| Query Param | Tipo   | Exemplo                  |
+|-------------|--------|--------------------------|
+| `status`    | string | `?status=PENDING`        |
+| `minTotal`  | number | `?minTotal=100`          |
+| `maxTotal`  | number | `?maxTotal=500`          |
+| `startDate` | string | `?startDate=2026-01-01`  |
+| `endDate`   | string | `?endDate=2026-12-31`    |
+
+**Exemplo combinado:** `GET /pedidos/search?status=PAID&minTotal=50&startDate=2026-01-01`
 
 ### Observações
 
