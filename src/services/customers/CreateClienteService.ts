@@ -1,5 +1,5 @@
-import { AppDataSource } from "../database/data-source";
-import { Cliente } from "../entities/Cliente";
+import { AppDataSource } from "../../database/data-source";
+import { Cliente } from "../../entities/Cliente";
 
 interface IRequest {
 	nome: string;

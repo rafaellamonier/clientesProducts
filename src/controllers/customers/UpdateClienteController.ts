@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { UpdateClienteService } from "../services/UpdateClienteService.ts";
-import { updateClienteSchema } from "../schemas/updateClienteSchema.ts";
+import { UpdateClienteService } from "../../services/customers/UpdateClienteService";
+import { updateClienteSchema } from "../../schemas/updateClienteSchema";
 
 export class UpdateClienteController {
 	async handle(req: Request, res: Response, next: NextFunction) {

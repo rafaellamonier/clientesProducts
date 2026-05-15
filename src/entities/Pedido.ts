@@ -3,36 +3,38 @@ import {
 	PrimaryGeneratedColumn,
 	Column,
 	CreateDateColumn,
+	UpdateDateColumn,
 	ManyToOne,
 	JoinColumn,
+	RelationId,
 } from "typeorm";
 import { Cliente } from "./Cliente";
 
 export enum PedidoStatus {
-	PENDENTE = "pendente",
-	CANCELADO = "cancelado",
-	PAGO = "pago",
+	PENDING = "PENDING",
+	CANCELED = "CANCELED",
+	PAID = "PAID",
 }
 
 @Entity("pedidos")
 export class Pedido {
 	@PrimaryGeneratedColumn()
-	id: number;
+	id!: number;
 
 	@Column()
-	descricao: string;
+	descricao!: string;
 
 	@Column({
 		type: "decimal",
 	})
-	total: number;
+	total!: number;
 
 	@Column({
 		type: "enum",
 		enum: PedidoStatus,
-		default: PedidoStatus.PENDENTE,
+		default: PedidoStatus.PENDING,
 	})
-	status: PedidoStatus;
+	status!: PedidoStatus;
 
 	@ManyToOne(
 		() => Cliente,
@@ -44,8 +46,14 @@ export class Pedido {
 	@JoinColumn({
 		name: "cliente_id",
 	})
-	cliente: Cliente;
+	cliente: Cliente | undefined;
+
+	@RelationId((pedido: Pedido) => pedido.cliente)
+	customerId!: number;
 
 	@CreateDateColumn()
-	created_at: Date;
+	created_at!: Date;
+
+	@UpdateDateColumn()
+	updated_at!: Date;
 }

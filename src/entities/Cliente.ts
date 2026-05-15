@@ -3,6 +3,7 @@ import {
 	PrimaryGeneratedColumn,
 	Column,
 	CreateDateColumn,
+	UpdateDateColumn,
 	OneToMany,
 } from "typeorm";
 import { Pedido } from "./Pedido";
@@ -26,9 +27,12 @@ export class Cliente {
 	@CreateDateColumn()
 	created_at!: Date;
 
+	@UpdateDateColumn()
+	updated_at!: Date;
+
 	@OneToMany(
 		() => Pedido,
-		(pedido) => pedido.cliente
+		(pedido) => pedido.cliente,
 	)
 	pedidos!: Pedido[];
 }

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { UpdatePedidoService } from "../services/UpdatePedidoService";
-import { updatePedidoSchema } from "../schemas/updatePedidoSchema";
+import { UpdatePedidoService } from "../../services/orders/UpdatePedidoService";
+import { updatePedidoSchema } from "../../schemas/updatePedidoSchema";
 
 export class UpdatePedidoController {
 	async handle(req: Request, res: Response, next: NextFunction) {

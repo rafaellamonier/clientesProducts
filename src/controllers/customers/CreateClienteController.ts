@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { CreateClienteService } from "../services/CreateClienteService";
-import { createClienteSchema } from "../schemas/createClienteSchema";
+import { CreateClienteService } from "../../services/customers/CreateClienteService";
+import { createClienteSchema } from "../../schemas/createClienteSchema";
 
 export class CreateClienteController {
 	async handle(req: Request, res: Response, next: NextFunction) {

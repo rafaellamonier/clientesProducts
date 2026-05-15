@@ -1,11 +1,11 @@
-import { AppDataSource } from "../database/data-source";
-import { Pedido } from "../entities/Pedido";
+import { AppDataSource } from "../../database/data-source";
+import { Pedido, PedidoStatus } from "../../entities/Pedido";
 
 interface IRequest {
 	id: number;
 	descricao: string;
 	total: number;
-	status: "pendente" | "cancelado" | "pago";
+	status: PedidoStatus;
 }
 
 export class UpdatePedidoService {

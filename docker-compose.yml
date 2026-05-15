@@ -10,4 +10,4 @@ services:
       POSTGRES_DB: backend_test
 
     ports:
-      - "5433:5432"
+      - "5434:5432"
