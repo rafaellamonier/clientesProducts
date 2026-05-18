@@ -1,19 +1,21 @@
 import { Router } from "express";
-import { CreatePedidoController } from "../controllers/orders/CreatePedidoController";
-import { UpdatePedidoController } from "../controllers/orders/UpdatePedidoController";
-import { ListPedidosController } from "../controllers/orders/ListPedidosController";
-import { GetPedidoController } from "../controllers/orders/GetPedidoController";
-import { DeletePedidoController } from "../controllers/orders/DeletePedidoController";
-import { SearchPedidosController } from "../controllers/orders/SearchPedidosController";
+import {
+	CreatePedidoController,
+	UpdatePedidoController,
+	ListPedidosController,
+	GetPedidoController,
+	DeletePedidoController,
+	SearchPedidosController,
+} from "../controllers/orders/OrdersController";
 
 const pedidosRoutes = Router();
 
-const createPedidoController = new CreatePedidoController();
-const updatePedidoController = new UpdatePedidoController();
-const listPedidosController = new ListPedidosController();
-const getPedidoController = new GetPedidoController();
-const deletePedidoController = new DeletePedidoController();
-const searchPedidosController = new SearchPedidosController();
+const createPedidoController = CreatePedidoController();
+const updatePedidoController = UpdatePedidoController();
+const listPedidosController = ListPedidosController();
+const getPedidoController = GetPedidoController();
+const deletePedidoController = DeletePedidoController();
+const searchPedidosController = SearchPedidosController();
 
 pedidosRoutes.get("/", listPedidosController.handle);
 pedidosRoutes.get("/search", searchPedidosController.handle);

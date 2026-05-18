@@ -1,19 +1,21 @@
 import { Router } from "express";
-import { CreateClienteController } from "../controllers/customers/CreateClienteController";
-import { ListClientesController } from "../controllers/customers/ListClientesController";
-import { ListClienteByIdController } from "../controllers/customers/ListClienteByIdController";
-import { UpdateClienteController } from "../controllers/customers/UpdateClienteController";
-import { DeleteClienteController } from "../controllers/customers/DeleteClienteController";
-import { ListPedidosByClienteController } from "../controllers/orders/ListPedidosByClienteController";
+import { 
+    CreateClienteController,
+    DeleteClienteController,
+    ListClienteByIdController,
+    ListClientesController,
+    UpdateClienteController
+} from "../controllers/customers/CustomersController";
+import { ListPedidosByClienteController } from "../controllers/orders/OrdersController";
 
 const clienteRoutes = Router();
 
-const createClienteController = new CreateClienteController();
-const listClientesController = new ListClientesController();
-const listClienteByIdController = new ListClienteByIdController();
-const updateClienteController = new UpdateClienteController();
-const deleteClienteController = new DeleteClienteController();
-const listPedidosByClienteController = new ListPedidosByClienteController();
+const createClienteController = CreateClienteController();
+const listClientesController =  ListClientesController();
+const listClienteByIdController =  ListClienteByIdController();
+const updateClienteController =  UpdateClienteController();
+const deleteClienteController = DeleteClienteController();
+const listPedidosByClienteController =  ListPedidosByClienteController();
 
 clienteRoutes.post("/", createClienteController.handle);
 clienteRoutes.get("/", listClientesController.handle);

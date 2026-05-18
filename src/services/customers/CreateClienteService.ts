@@ -11,16 +11,11 @@ export class CreateClienteService {
 	async execute({ nome, telefone, email }: IRequest) {
 		const clienteRepository = AppDataSource.getRepository(Cliente);
 
-		console.log("SERVICE");
-
 		const emailAlreadyExists = await clienteRepository.findOne({
 			where: {
 				email,
 			},
 		});
-
-		console.log("teste email", email);
-		console.log("teste emailAlreadyExists", emailAlreadyExists);
 
 		if (emailAlreadyExists) {
 			throw new Error("Email já cadastrado");
